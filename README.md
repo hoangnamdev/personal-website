@@ -1,4 +1,4 @@
-# personal-website
+# Personal website (OLD)
 A personal website project I made a few years ago. Uploaded simply for safekeeping ^^
 
 ![web-visualizer](https://raw.githubusercontent.com/hoangnamdev/personal-website/refs/heads/main/Visualizer.PNG)
