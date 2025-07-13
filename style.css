@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "Porcine";
+    src: url("fonts/Porcine-Heavy.woff") format('woff');
+}
+
+:root {
+    --main-color: #1D1A1D;
+    --prim-color: #b8e9d1;
+    --secondary-color: #B8E9D1;
+    --cursorX: 50%;
+    --cursorY: 50%;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--main-color);
+    font-family: Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    background: var(--prim-color);
+}
+
+#cursor {
+    z-index: 49;
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    height: 20vmax;
+    background: linear-gradient(to right, #94bca981, #364b3a81);
+    left: 50%;
+    top: 50%;
+    transition: height 1s ease, opacity 2s ease;
+}
+
+#foreground {
+    z-index: 1;
+    height: 50vmax;
+    left: 10%;
+    top: calc(50% + 520px);
+    position: absolute;
+    background: linear-gradient(to right, var(--main-color), var(--main-color));
+}
+
+.blob {
+    background-color: white;
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 10s infinite;
+    filter: blur(50px);
+    opacity: 1;
+}
+
+nav {
+    z-index: 50;
+    position: sticky;
+    top: 40px;
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 80px;
+}
+
+.nav--right > a {
+    color: var(--main-color);
+}
+
+.header--smiley {
+    user-select: none;
+    font-size: 50px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.header--display {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex;
+}
+
+.header--maintext {
+    user-select: none;
+    font-family: Helvetica;
+    font-size: 200px;
+    letter-spacing: -0.125em;
+    line-height: 0.9em;
+    width: 0;
+    padding: 0;
+    margin: 140px 10px;
+}
+
+.header--subtext {
+    font-weight: bold;
+    text-align: right;
+    font-family: Helvetica;
+    font-size: 50px;
+    letter-spacing: -0.05em;
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    margin: 140px 20px;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+    
+    50% {
+        scale: 1.25 1.5;
+    }
+    
+    to {
+        rotate: 360deg;
+    }
+  }
+
+img {
+    z-index: 0;
+    position: absolute;
+    top: 425px;
+    left: 43.75%;
+    width: 12.5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    z-index: 2;
+    position: relative;
+}
+
+.main--info {
+    width: 100%;
+    height: 500px;
+    box-shadow: 50px -100px 200px var(--main-color);
+    color: var(--secondary-color);
+    background: var(--main-color);
+}
+
+.main--info__techtools {
+    font-weight: bold;
+    font-size: 25px;
+}
